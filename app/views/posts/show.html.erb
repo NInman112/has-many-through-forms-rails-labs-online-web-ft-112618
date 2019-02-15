@@ -14,7 +14,6 @@
   <!-- display unique users -->
 <% end %>
 <% form_for @post.comments.build do |f| %>
-<% binding.pry%>
   <input type="hidden" id="hidden" name="comment[post_id]" value="<%= @post.id %>">
   <%= f.label :content %>
   <%= f.text_field :content %>
