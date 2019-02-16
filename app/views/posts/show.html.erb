@@ -2,7 +2,7 @@
 <p><%= @post.content %></p>
 
 <% @post.categories.each do |category| %>
-  <%= @post.categories.category_join %>
+  <%= @post.categories.category_join(@post.categories) %>
   <h3><%= "Categories: #{@post.categories.map {|category| category.name }.join(", ")}" %></h3>
 <% end %>
 
