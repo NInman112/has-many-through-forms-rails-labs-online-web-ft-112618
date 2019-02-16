@@ -3,6 +3,7 @@
 
 <% @post.categories.each do |category| %>
 <% binding.pry %>
+  <%= @post.categories.category_join %>
   <h3><%= "Categories: #{@post.categories.map {|category| category.name }.join(", ")}" %></h3>
 <% end %>
 
