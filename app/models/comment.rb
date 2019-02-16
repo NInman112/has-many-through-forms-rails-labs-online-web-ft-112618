@@ -6,5 +6,4 @@ class Comment < ActiveRecord::Base
   def reject_users(attributes)
     attributes['username'].blank?
   end
-
 end
