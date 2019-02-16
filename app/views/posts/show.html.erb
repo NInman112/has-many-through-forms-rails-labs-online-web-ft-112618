@@ -3,7 +3,7 @@
 	<h3><%= "Categories: #{@post.categories.map {|category| category.name }.join(", ")}" %></h3>
 	<% end %>
 	<p><%= @post.content %></p>
-	
+
 	<br>
 	<ul>
 	  <%= @post.users.uniq.each do |user| %>
