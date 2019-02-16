@@ -5,4 +5,7 @@ class Post < ActiveRecord::Base
   has_many :users, through: :comments
   accepts_nested_attributes_for :categories
 
+
+  def categories_attributes=(categories_hashes)
+    raise categories_hashes.inspect
 end
