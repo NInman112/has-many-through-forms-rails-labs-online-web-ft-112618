@@ -12,7 +12,8 @@ class Post < ActiveRecord::Base
         category = Category.find_or_create_by(name: categories_attributes[:name])
         if self.categories.exclude?(category)
           self.post_categories.build(:category => category)
-        end 
+        end
+      end 
     end
     #raise categories_hashes.inspect
 end
