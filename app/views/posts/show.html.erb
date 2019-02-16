@@ -1,1 +1,25 @@
+<h2><%= @post.title %></h2>
+<p><%= @post.content %></p>
 
+<% @post.categories.each do |category| %>
+  <h3><%= "Categories: #{@post.categories.category_join(@post.categories)}" %></h3>
+<% end %>
+
+<% @post.comments.each do |comment| %>
+  <%= comment.user.username %> says: <%= comment.content %>
+<% end %>
+
+<% @post.users.uniq.each do |user| %>
+  <%= link_to user.username, user_path(user) %>
+<% end %>
+
+<%= form_for @post.comments.build do |f| %>
+  <input type="hidden" id="hidden" name="comment[post_id]" value="<%= @post.id %>">
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.collection_select :user_id, User.all, :id, :username, include_blank: true %>
+  <%= f.fields_for :user, @post.users.build do |comment_fields| %>
+    <%= comment_fields.text_field :username %>
+  <% end %>
+  <%= f.submit %>
+<% end %>
