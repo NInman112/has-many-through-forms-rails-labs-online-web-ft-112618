@@ -3,6 +3,6 @@ class Category < ActiveRecord::Base
   has_many :posts, through: :post_categories
 
   def self.category_join
-    puts "hello"
+    binding.pry
   end
 end
