@@ -9,9 +9,8 @@
 # it will use the :id as the value for the checkbox
 # and it will use the :name method as the label for the checkbox
 %>
-<%= f.fields_for :categories, Category.new do |category_builder| %>
-  <%= category_builder.text_field :name %>
-<% end %>
-
+    <%= f.fields_for :categories, Category.new do |category_builder| %>
+      <%= category_builder.text_field :name %>
+      <% end %>
   <%= f.submit %>
 <% end %>
