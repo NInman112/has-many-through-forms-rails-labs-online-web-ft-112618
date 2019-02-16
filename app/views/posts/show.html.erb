@@ -6,8 +6,6 @@
   <h3><%= "Categories: #{@post.categories.map {|category| category.name }.join(", ")}" %></h3>
 <% end %>
 
-
-
 <% @post.comments.each do |comment| %>
   <%= comment.user.username %> says: <%= comment.content %>
 <% end %>
