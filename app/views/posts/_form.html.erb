@@ -3,9 +3,9 @@
   <p>  <%= f.text_field :title%></p>
   <p>  <%= f.label :content %></p>
   <p>  <%= f.text_field :content %></p>
-  <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+  <%= f.collection_check_boxes(:category_ids, Category.all, :name, :id) %>
 <%
-# wWill generate a checkbox named post[category_ids][] for each category in Category.all
+# Will generate a checkbox named post[category_ids][] for each category in Category.all
 # it will use the :id as the value for the checkbox 
 # and it will use the :name method as the label for the checkbox 
 %>
