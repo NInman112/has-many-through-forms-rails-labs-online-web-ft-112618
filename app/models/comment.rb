@@ -10,7 +10,9 @@ class Comment < ActiveRecord::Base
 
   def user_attributes=(user_attributes)
     binding.pry
-    user = User.find_or_create_by(user_attributes)
-    self.user = user
+    if user_attributes != ""
+      user = User.find_or_create_by(user_attributes)
+      self.user = user
+    end 
   end
 end
