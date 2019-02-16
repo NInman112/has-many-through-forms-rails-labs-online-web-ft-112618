@@ -4,11 +4,12 @@ class Comment < ActiveRecord::Base
   accepts_nested_attributes_for :user, reject_if: :reject_posts
 
   def reject_posts(attributes)
-    binding.pry
+
     attributes['title'].blank?
   end
 
   def user_attributes=(user_attributes)
+    binding.pry
     user = User.find_or_create_by(user_attributes)
     self.user = user
   end
