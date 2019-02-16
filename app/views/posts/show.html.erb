@@ -5,10 +5,11 @@
 <% @post.categories.each do |category| %>
   <h3><%= "Categories: #{@post.categories.map {|category| category.name }.join(", ")}" %></h3>
 <% end %>
-
-<% @post.comments.each do |comment| %>
-  <%= comment.user.username %> says: <%= comment.content %>
-<% end %>
+<ul>
+  <% @post.comments.each do |comment| %>
+  <li><%= comment.user.username %> says: <%= comment.content %></li>
+  <% end %>
+</ul>
 
 <% @post.users.uniq.each do |user| %>
   <%= link_to user.username, user_path(user) %>
