@@ -16,5 +16,4 @@ class Post < ActiveRecord::Base
       end
     end
   end 
-    #raise categories_hashes.inspect
 end
