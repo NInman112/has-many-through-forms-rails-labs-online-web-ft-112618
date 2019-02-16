@@ -13,7 +13,7 @@ class Post < ActiveRecord::Base
         if self.categories.exclude?(category)
           self.post_categories.build(:category => category)
         end
-      end 
+      end
     end
   end 
     #raise categories_hashes.inspect
